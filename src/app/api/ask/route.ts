@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { AI } from '@/app/ai/AI';
 
 export async function GET(request: NextRequest) {
-  const rawBody = await request.text();
   const searchParams = new URL(request.url).searchParams;
 
   const message = searchParams.get('message');

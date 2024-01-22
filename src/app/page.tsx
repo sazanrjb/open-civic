@@ -11,15 +11,15 @@ export default function AssistantPage() {
   const [result, setResult] = useState(ChatResponseSchema.parse({}));
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: any) => {
     setMessage(event.target.value);
   };
 
-  const handleTypeChange = (event) => {
+  const handleTypeChange = (event: any) => {
     setType(event.target.value);
   };
 
-  const handleInputSubmit = async (event) => {
+  const handleInputSubmit = async (event: any) => {
     setIsLoading(true);
     fetch(`/api/ask?message=${message}&type=${type}`, {
       method: 'GET',

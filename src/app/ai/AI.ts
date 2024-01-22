@@ -1,6 +1,5 @@
 import OpenAI from 'openai';
-import { ChatCompletion } from 'openai/resources';
-import * as aiConfig from '@/config/ai.ts';
+import * as aiConfig from '@/config/ai';
 import { ChatResponseSchema, ChatType } from '@/types/ai';
 
 export class AI {
@@ -51,9 +50,9 @@ export class AI {
     ] as const;
   }
 
-  private getJsonResponse(response: ChatCompletion) {
+  private getJsonResponse(response: unknown) {
     try {
-      return JSON.parse(response.choices[0].message.content || '');
+      return JSON.parse((response as any)?.choices[0]?.message?.content || '');
     } catch (e) {
       return null;
     }

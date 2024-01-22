@@ -15,3 +15,8 @@ export const ChatResponseSchema = z.object({
   website: z.string().optional(),
   feedback: z.string().optional(),
 });
+
+export enum ChatType {
+  GENERAL = 'general',
+  SPECIFIC = 'specific',
+}

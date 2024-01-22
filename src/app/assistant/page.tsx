@@ -30,17 +30,11 @@ export default function AssistantPage() {
   return (
     <div className="flex min-h-[600px] flex-1 flex-col align-middle p-6 sm:px-6 lg:px-8 py-18">
       <div className="flex flex-col-reverse items-center justify-center">
-        <Image
-          src={brandLogo}
-          alt="Brand Logo"
-          width={150}
-          height={150}
-        />
+        <Image src={brandLogo} alt="Brand Logo" width={150} height={150} />
       </div>
 
       <form className="flex flex-row items-center justify-center mt-16">
-        <div
-          className="bg-white relative flex w-full hover:shadow-lg focus-within:shadow-lg max-w-md rounded-full border border-gray-200 px-6 py-4 items-center sm:max-w-xl lg:max-w-2xl">
+        <div className="bg-white relative flex w-full hover:shadow-lg focus-within:shadow-lg max-w-md rounded-full border border-gray-200 px-6 py-4 items-center sm:max-w-xl lg:max-w-2xl">
           <input
             type="text"
             className="flex-grow focus:outline-none bg-transparent"
@@ -80,8 +74,7 @@ export default function AssistantPage() {
         !!Object.values(result).length && (
           <div className="flex flex-row items-center justify-center mt-20 max-w-md mx-auto">
             <div className="divide-y divide-gray-200 overflow-hidden rounded-lg bg-gray-200 shadow">
-              <div
-                className="rounded-tl-lg rounded-tr-lg sm:rounded-tr-none group relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-christmasGreen-700">
+              <div className="rounded-tl-lg rounded-tr-lg sm:rounded-tr-none group relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-christmasGreen-700">
                 {result.feedback ? (
                   <div className="mt-4">
                     <p className="mt-2 text-sm text-gray-500">
@@ -129,7 +122,8 @@ export default function AssistantPage() {
               </div>
             </div>
           </div>
-        ))}
+        )
+      )}
     </div>
   );
 }

@@ -1,0 +1,25 @@
+name: Lint
+
+on: push
+
+jobs:
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.17.0
+          cache: npm
+          cache-dependency-path: './package-lock.json'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run linters
+        run: npm run lint:check && npm run prettier:check

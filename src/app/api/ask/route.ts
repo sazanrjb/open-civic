@@ -1,3 +1,5 @@
+export const maxDuration = 60;
+
 import { NextRequest, NextResponse } from 'next/server';
 import { AI } from '@/app/ai/AI';
 import { z } from 'zod';
